@@ -222,7 +222,7 @@
             <dependency>
                 <groupId>com.global.framework</groupId>
                 <artifactId>global-yedis</artifactId>
-                <version>2.0.3</version>
+                <version>2.0.3-SNAPSHOT</version>
                 <exclusions>
                     <exclusion>
                         <artifactId>redis-java</artifactId>
@@ -765,7 +765,7 @@
                                         <include>com.alibaba:dubbo:[global-2.5.21]</include>
                                         <include>com.alibaba:druid:[yiji-1.0.21]</include>
                                         <include>com.yiji.postman:postman-api-sdk:[1.5.0]</include>
-                                        <include>com.global.framework:global-yedis:[2.0.3]</include>
+                                        <include>com.global.framework:global-yedis:[2.0.3-SNAPSHOT]</include>
 
                                         <!-- 笨熊API定制分支 -->
                                         <include>com.alibaba:dubbo:[cutebear-2.5.20]</include>
