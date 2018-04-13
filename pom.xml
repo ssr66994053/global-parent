@@ -251,9 +251,9 @@
             </dependency>
             <!--易极付公共依赖-->
             <dependency>
-                <groupId>com.yjf.common</groupId>
-                <artifactId>yjf-common-util</artifactId>
-                <version>2.2.20180129</version>
+                <groupId>com.global</groupId>
+                <artifactId>global-util</artifactId>
+                <version>1.0-SNAPSHOT</version>
                 <exclusions>
                     <exclusion>
                         <artifactId>*</artifactId>
@@ -591,8 +591,8 @@
             <artifactId>dtrace-core</artifactId>
         </dependency>
         <dependency>
-            <groupId>com.yjf.common</groupId>
-            <artifactId>yjf-common-util</artifactId>
+            <groupId>com.global</groupId>
+            <artifactId>global-util</artifactId>
         </dependency>
         <dependency>
             <groupId>io.dropwizard.metrics</groupId>
@@ -745,7 +745,7 @@
                                     <searchTransitive>true</searchTransitive>
                                     <excludes>
                                         <exclude>org.slf4j:slf4j-log4j12</exclude>
-                                        <exclude>com.yjf.common:yjf-common-util</exclude>
+                                        <exclude>com.global:global-util</exclude>
                                         <exclued>org.apache.cxf:cxf-rt-transports-http-jetty</exclued>
                                         <exclued>javax.servlet:javax.servlet-api</exclued>
                                         <exclued>com.yjf.security.phprpc:phprpc</exclued>
@@ -759,7 +759,7 @@
                                         <exclued>com.global.framework:global-yedis</exclued>
                                     </excludes>
                                     <includes>
-                                        <include>com.yjf.common:yjf-common-util:[2.2.20180129]</include>
+                                        <include>com.global:global-util:[1.0-SNAPSHOT]</include>
                                         <include>javax.servlet:javax.servlet-api:[3.1.0]</include>
                                         <include>com.yjf.security.phprpc:phprpc:[3.1]</include>
                                         <include>com.alibaba:dubbo:[global-2.5.21]</include>
@@ -777,7 +777,7 @@
 
                                         	必须使用的版本:
                                         servlet-api:请使用3.1.0
-                                        yjf-common-util:2.2.20180129</message>
+                                        global-util:1.0-SNAPSHOT</message>
                                 </bannedDependencies>
                                 <!--防止因为传递依赖版本不同导致依赖问题,这个要求太高了,不开启
                                 <DependencyConvergence/>-->
