@@ -72,7 +72,7 @@
             <dependency>
                 <groupId>com.alibaba</groupId>
                 <artifactId>druid</artifactId>
-                <version>yiji-1.0.21</version>
+                <version>1.0.16-SNAPSHOT</version>
             </dependency>
             <!--dubbo-->
             <dependency>
@@ -178,6 +178,8 @@
                 <artifactId>xstream</artifactId>
                 <version>1.4.9</version>
             </dependency>
+            
+            <!--  
             <dependency>
                 <groupId>com.yiji.dtrace</groupId>
                 <artifactId>dtrace-core</artifactId>
@@ -219,6 +221,10 @@
                     </exclusion>
                 </exclusions>
             </dependency>
+            -->
+            
+            
+            
             <dependency>
                 <groupId>com.global.framework</groupId>
                 <artifactId>global-yedis</artifactId>
@@ -234,6 +240,7 @@
                     </exclusion>
                 </exclusions>
             </dependency>
+            <!--  
             <dependency>
                 <groupId>com.yiji.postman</groupId>
                 <artifactId>postman-api-sdk</artifactId>
@@ -249,11 +256,13 @@
                     </exclusion>
                 </exclusions>
             </dependency>
+            -->
+            
             <!--易极付公共依赖-->
             <dependency>
-                <groupId>com.global</groupId>
-                <artifactId>global-util</artifactId>
-                <version>1.0-SNAPSHOT</version>
+                <groupId>com.global.common</groupId>
+                <artifactId>global-common-util</artifactId>
+                <version>2.2.20180417-SNAPSHOT</version>
                 <exclusions>
                     <exclusion>
                         <artifactId>*</artifactId>
@@ -586,13 +595,16 @@
             <groupId>com.google.guava</groupId>
             <artifactId>guava</artifactId>
         </dependency>
+        <!--  
         <dependency>
             <groupId>com.yiji.dtrace</groupId>
             <artifactId>dtrace-core</artifactId>
         </dependency>
+        -->
+        
         <dependency>
-            <groupId>com.global</groupId>
-            <artifactId>global-util</artifactId>
+            <groupId>com.global.common</groupId>
+            <artifactId>global-common-util</artifactId>
         </dependency>
         <dependency>
             <groupId>io.dropwizard.metrics</groupId>
@@ -687,8 +699,8 @@
         <plugins>
             <!--检查依赖中是否有相同的类，如果有，提示警告，可能会因为类加载顺序不一致导致不可预期的行为-->
             <plugin>
-                <groupId>com.yiji.maven</groupId>
-                <artifactId>yiji-maven-plugin</artifactId>
+                <groupId>com.global.maven</groupId>
+                <artifactId>global-maven-plugin</artifactId>
                 <version>1.0-SNAPSHOT</version>
                 <executions>
                     <execution>
@@ -745,26 +757,30 @@
                                     <searchTransitive>true</searchTransitive>
                                     <excludes>
                                         <exclude>org.slf4j:slf4j-log4j12</exclude>
-                                        <exclude>com.global:global-util</exclude>
+                                        <exclude>com.global.common:global-common-util</exclude>
                                         <exclued>org.apache.cxf:cxf-rt-transports-http-jetty</exclued>
                                         <exclued>javax.servlet:javax.servlet-api</exclued>
                                         <exclued>com.yjf.security.phprpc:phprpc</exclued>
                                         <exclued>com.alibaba:dubbo</exclued>
                                         <exclued>com.alibaba:druid</exclued>
+                                        <!--  
                                         <exclued>com.yiji.postman:postman-api-sdk</exclued>
                                         <exclued>com.yiji:dtrace-core</exclued>
                                         <exclued>com.yiji:dtrace-api</exclued>
                                         <exclued>com.yiji:dtrace-dubbo</exclued>
                                         <exclued>com.yiji:dtrace-support</exclued>
+                                        -->
                                         <exclued>com.global.framework:global-yedis</exclued>
                                     </excludes>
                                     <includes>
-                                        <include>com.global:global-util:[1.0-SNAPSHOT]</include>
+                                        <include>com.global.common:global-common-util:[2.2.20180417-SNAPSHOT]</include>
                                         <include>javax.servlet:javax.servlet-api:[3.1.0]</include>
                                         <include>com.yjf.security.phprpc:phprpc:[3.1]</include>
                                         <include>com.alibaba:dubbo:[global-2.5.21]</include>
-                                        <include>com.alibaba:druid:[yiji-1.0.21]</include>
+                                        <include>com.alibaba:druid:[1.0.16-SNAPSHOT]</include>
+                                        <!--  
                                         <include>com.yiji.postman:postman-api-sdk:[1.5.0]</include>
+                                        -->
                                         <include>com.global.framework:global-yedis:[2.0.3-SNAPSHOT]</include>
 
                                         <!-- 笨熊API定制分支 -->
@@ -777,7 +793,7 @@
 
                                         	必须使用的版本:
                                         servlet-api:请使用3.1.0
-                                        global-util:1.0-SNAPSHOT</message>
+                                        global-common-util:2.2.20180417-SNAPSHOT</message>
                                 </bannedDependencies>
                                 <!--防止因为传递依赖版本不同导致依赖问题,这个要求太高了,不开启
                                 <DependencyConvergence/>-->
@@ -887,12 +903,12 @@
                 <repository>
                     <id>nexus-releases</id>
                     <name>Internal Release Repository</name>
-                    <url>http://192.168.48.41:8081/nexus/content/repositories/releases/</url>
+                    <url>http://152.104.31.139:8081/nexus/content/repositories/releases/</url>
                 </repository>
                 <snapshotRepository>
                     <id>nexus-snapshot</id>
                     <name>Internal snapshot Repository</name>
-                    <url>http://192.168.48.41:8081/nexus/content/repositories/snapshots/</url>
+                    <url>http://152.104.31.139:8081/nexus/content/repositories/snapshots/</url>
                 </snapshotRepository>
             </distributionManagement>
         </profile>
@@ -902,12 +918,12 @@
                 <repository>
                     <id>nexus-releases</id>
                     <name>Internal Release Repository</name>
-                    <url>http://192.168.45.199:8081/nexus/content/repositories/releases/</url>
+                    <url>http://152.104.31.139:8081/nexus/content/repositories/releases/</url>
                 </repository>
                 <snapshotRepository>
                     <id>nexus-snapshot</id>
                     <name>Internal snapshot Repository</name>
-                    <url>http://192.168.45.199:8081/nexus/content/repositories/snapshots/</url>
+                    <url>http://152.104.31.139:8081/nexus/content/repositories/snapshots/</url>
                 </snapshotRepository>
             </distributionManagement>
         </profile>

@@ -158,7 +158,7 @@ under the License.
       <id>yjf</id>
       <mirrorOf>*</mirrorOf>
       <name>yjf</name>
-      <url>http://192.168.48.41:8081/nexus/content/groups/public/</url>
+      <url>http://152.104.31.139:8081/nexus/content/groups/public/</url>
     </mirror>
   <!-- 
  mirror
@@ -267,7 +267,7 @@ under the License.
                 <pluginRepository>
                     <id>yiji-maven-plugin-repos</id>
                     <name>Maven yiji Mirror</name>
-                    <url>http://192.168.48.41:8081/nexus/content/groups/public/</url>
+                    <url>http://152.104.31.139:8081/nexus/content/groups/public/</url>
                     <releases>
                         <enabled>true</enabled>
                     </releases>					
@@ -282,7 +282,7 @@ under the License.
                 <repository>
                     <id>yiji-maven-dep-repos</id>
                     <name>Maven yiji Mirror</name>
-					<url>http://192.168.48.41:8081/nexus/content/groups/public/</url>
+					<url>http://152.104.31.139:8081/nexus/content/groups/public/</url>
                     <releases>
                         <enabled>true</enabled>
                         <updatePolicy>always</updatePolicy>
